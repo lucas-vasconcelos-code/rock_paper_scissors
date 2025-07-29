@@ -4,11 +4,13 @@ function getHumanChoice() {
 
 function getComputerChoice()
 {
-    let randNum = Math.random;
+    let randNum = Math.random();
 
-    if (randNum <= (randNum/3))
+    console.log(randNum);
+
+    if (randNum <= (1/3))
         return "rock";
-    else if ((randNum/3) < randNum <= (randNum * 2 / 3))
+    else if ((1/3) < randNum && randNum <= (2 / 3))
         return "paper";
     else
         return "scissors";
@@ -41,9 +43,11 @@ function playRound(humanChoiceInput, computerChoiceInput) {
 
 let humanScore = 0;
 let computerScore = 0;
+let humanChoice;
+let computerChoice;
 for (let i = 0; i < 10; i++) {
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
 
     console.log(playRound(humanChoice, computerChoice));
     console.log(computerChoice);
